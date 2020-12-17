@@ -7,7 +7,7 @@
                 </router-link>
             <p class="text-sm text-gray-500 group-hover:text-white">{{post.body}}</p>
             <div class="flex">
-                <span class="text-sm text-gray-600 mr-3 italic group-hover:text-white">Author : {{post.userId}}</span>
+                <span class="text-sm text-gray-600 mr-3 italic group-hover:text-white">Author : {{getUsernameById(post.userId)}}</span>
             </div>
         </div>
     </div>
@@ -23,7 +23,10 @@ export default {
         }
     },
     computed:{
-        ...mapGetters(['allPosts']),
+        ...mapGetters(['allPosts', 'getAllUsers', 'getUsernameById']),
+        // username(id){
+        //     return this.getAllUsers.find(user => user.id === parseInt(id)).username
+        // }
     },
 }
 </script>

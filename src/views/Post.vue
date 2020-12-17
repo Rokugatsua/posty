@@ -7,7 +7,7 @@
       <p class="text-gray-700">{{post.body}}</p>
     </main>
     <footer class="my-3 flex justify-between">
-      <p class="text-gray-400 text-sm">Posted by <span>{{post.userId}}</span></p>
+      <p class="text-gray-400 text-sm">Posted by <span>{{username}}</span></p>
       <ul class="flex">
         <li class="text-blue-400 ml-4 flex text-center">
           <button type="button" @click="editPost(post.id)" class="flex btn-sm hover:bg-blue-400">
@@ -36,7 +36,8 @@ export default {
     return {
       post:{},
       toDelete: false,
-      hasFetch: false
+      hasFetch: false,
+      username: ''
     }
   },
   components:{
@@ -67,10 +68,14 @@ export default {
   created(){
     this.fetchPost().then(()=>{
       this.post = this.$store.getters.getPostById(parseInt(this.$route.params.postId))
+      this.username = this.$store.getters.getUsernameById(this.post.userId)
     })
   },
   mounted(){
-    if (this.post) this.post = this.$store.getters.getPostById(parseInt(this.$route.params.postId))
+    if (this.post) {
+      this.post = this.$store.getters.getPostById(parseInt(this.$route.params.postId))
+      this.username = this.$store.getters.getUsernameById(this.post.userId)
+    }
   },
 }
 </script>

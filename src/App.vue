@@ -22,10 +22,11 @@ export default {
     Sidebar
   },
   methods:{
-    ...mapActions(['fetchPosts'])
+    ...mapActions(['fetchPosts', 'fetchUsers'])
   },
   created() {
     this.fetchPosts()
+    this.fetchUsers()
   }
 }
 </script>
