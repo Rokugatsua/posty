@@ -87,6 +87,14 @@ const actions = {
         } catch (err) {
             console.log(err)
         }
+    },
+    async fetchPostWithLimit({commit}, limit) {
+        try {
+            const response = await axios.get(`https://jsonplaceholder.typicode.com/posts?_limit=${limit}`)
+            commit('setPosts', response.data)
+        } catch (err) {
+            
+        }
     }
 }
 
