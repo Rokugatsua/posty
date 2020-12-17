@@ -7,6 +7,7 @@
       <p>
         Hello my name is Jun, this a some blog post like website SPA. i create it with Vue.js 3, Vue Router, Vuex.
         and for API, i use jsonplaceholder from <a href="https://jsonplaceholder.typicode.com">https://jsonplaceholder.typicode.com</a>.
+        for style i am use tailwindcss 2.0 with compatiablity with Vite, and icons from heroicons.dev
       </p>
     </main>
 
